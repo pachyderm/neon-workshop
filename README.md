@@ -17,6 +17,7 @@ The below documentation walks you through the deployment of the pipelines and em
 9. [Examine the results](README.md#examine-the-results)
 
 Bonus:
+
 10. [Parallelize the inference](README.md#parallelize-the-inference)
 11. [Update the model training](README.md#update-the-model-training)
 12. [Update the training data set](README.md#update-the-training-data-set)
