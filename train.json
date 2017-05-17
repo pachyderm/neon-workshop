@@ -1,6 +1,6 @@
 {
   "pipeline": {
-    "name": "model"
+    "name": "model-neon"
   },
   "transform": {
     "image": "kaixhin/neon",
@@ -8,7 +8,7 @@
 	"python", 
 	"examples/imdb/train.py", 
 	"-f", 
-	"/pfs/training/labeledTrainData.tsv", 
+	"/pfs/training-neon/labeledTrainData.tsv", 
 	"-e", 
 	"1", 
 	"-eval", 
@@ -19,12 +19,14 @@
 	"/pfs/out/imdb.vocab" 
     ]
   },
-  "inputs": [
-    {
-      "repo": {
-        "name": "training"
-      },
+  "parallelism_spec": {
+    "strategy": "CONSTANT",
+    "constant": "1"
+  },
+  "input": {
+    "atom": {
+      "repo": "training-neon",
       "glob": "/"
     }
-  ]
+  }
 }
