@@ -54,7 +54,11 @@ We have to do a few custom things for inference.  The Neon example tutorial does
 - infer the sentiment of each of the reviews
 - output the inferred sentiment to a specified output directory
 
-All of these steps are implemented in the included [auto_inference.py](inference/auto_inference.py) script.
+All of these steps are implemented in the included [auto_inference.py](inference/auto_inference.py) script.  We will run this script as follows:
+
+```
+python auto_inference.py --model_weights imdb.p --vocab_file imdb.vocab --review_files reviews --output_dir /out
+```
 
 To create a Docker image that will have this script available we have created a [corresponding Dockerfile](inference/Dockerfile).  For convenience, we have already built this image and uploaded it to Docker Hub [here](https://hub.docker.com/r/dwhitena/neon-inference/). 
 
