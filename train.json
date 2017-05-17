@@ -1,6 +1,6 @@
 {
   "pipeline": {
-    "name": "model-neon"
+    "name": "model"
   },
   "transform": {
     "image": "kaixhin/neon",
@@ -8,7 +8,7 @@
 	"python", 
 	"examples/imdb/train.py", 
 	"-f", 
-	"/pfs/training-neon/labeledTrainData.tsv", 
+	"/pfs/training/labeledTrainData.tsv", 
 	"-e", 
 	"1", 
 	"-eval", 
@@ -25,7 +25,7 @@
   },
   "input": {
     "atom": {
-      "repo": "training-neon",
+      "repo": "training",
       "glob": "/"
     }
   }
