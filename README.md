@@ -151,7 +151,7 @@ ID                                   OUTPUT COMMIT                          STAR
 82682496-5b41-45a0-96f7-175812274dd8 model/5559fce59d9748b883ff8af6bc60eeb1 11 minutes ago 3 minutes 0       1 / 1    success
 $ pachctl list-repo
 NAME                CREATED             SIZE                
-reviews             21 minutes ago      1.628 KiB           
+reviews             21 minutes ago      0 B            
 model               10 minutes ago      20.93 MiB           
 training            21 minutes ago      977 KiB             
 $ pachctl list-file model master
