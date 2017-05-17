@@ -6,21 +6,22 @@ This workshop focuses on building a production scale machine learning pipeline w
 
 The below documentation walks you through the deployment of the pipelines and emphasizes a few key features related to reproducibility, pipeline triggering, and provenance:
 
-1. [Prepare a Python script and Docker image for training](README.md#prepare-a-python-script-and-docker-image-for-model-training)
-2. [Prepare a Python script and Docker image for inference](README.md#prepare-a-python-script-and-docker-image-for-inference)
-3. [Connect to your Pachyderm cluster](README.md#connect-to-your-pachyderm-cluster)
-4. [Create the input "data repositories"](README.md#create-the-input-data-repositories)
-5. [Commit the training data set into Pachyderm](README.md#commit-the-training-data-set-into-pachyderm)
-6. [Create the training pipeline](README.md#create-the-training-pipeline)
-7. [Commit input reviews](README.md#commit-input-reviews)
-8. [Create the inference pipeline](README.md#create-the-inference-pipeline)
-9. [Examine the results](README.md#examine-the-results)
+1. [Prepare a Python script and Docker image for training](README.md#1-prepare-a-python-script-and-docker-image-for-model-training)
+2. [Prepare a Python script and Docker image for inference](README.md#2-prepare-a-python-script-and-docker-image-for-inference)
+3. [Connect to your Pachyderm cluster](README.md#3-connect-to-your-pachyderm-cluster)
+4. [Create the input "data repositories"](README.md#4-create-the-input-data-repositories)
+5. [Commit the training data set into Pachyderm](README.md#5-commit-the-training-data-set-into-pachyderm)
+6. [Create the training pipeline](README.md#6-create-the-training-pipeline)
+7. [Commit input reviews](README.md#7-commit-input-reviews)
+8. [Create the inference pipeline](README.md#8-create-the-inference-pipeline)
+9. [Examine the results](README.md#9-examine-the-results)
 
 Bonus:
-10. [Parallelize the inference](README.md#parallelize-the-inference)
-11. [Update the model training](README.md#update-the-model-training)
-12. [Update the training data set](README.md#update-the-training-data-set)
-13. [Examine pipeline provenance](README.md#examine-pipeline-provenance)
+
+10. [Parallelize the inference](README.md#10-parallelize-the-inference)
+11. [Update the model training](README.md#11-update-the-model-training)
+12. [Update the training data set](README.md#12-update-the-training-data-set)
+13. [Examine pipeline provenance](README.md#13-examine-pipeline-provenance)
 
 Finally, we provide some [Resources](README.md#resources) for you for further exploration.
 
@@ -53,7 +54,11 @@ We have to do a few custom things for inference.  The Neon example tutorial does
 - infer the sentiment of each of the reviews
 - output the inferred sentiment to a specified output directory
 
-All of these steps are implemented in the included [auto_inference.py](inference/auto_inference.py) script.
+All of these steps are implemented in the included [auto_inference.py](inference/auto_inference.py) script.  We will run this script as follows:
+
+```
+python auto_inference.py --model_weights imdb.p --vocab_file imdb.vocab --review_files reviews --output_dir /out
+```
 
 To create a Docker image that will have this script available we have created a [corresponding Dockerfile](inference/Dockerfile).  For convenience, we have already built this image and uploaded it to Docker Hub [here](https://hub.docker.com/r/dwhitena/neon-inference/). 
 
